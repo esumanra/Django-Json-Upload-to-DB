@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <div class="info-container">
+  {% if info_list %}
+    <div class="row border gy-3">
+      {% for entry in info_list %}
+          <div class="col-sm-12 gx-5">
+            <div class="card">
+            <h5 class="card-header">{{ entry.title }}</h5>
+              <div class="card-body">
+                  <p class="card-text">{{ entry.body }}</p>
+              </div>
+            </div>
+          </div>
+          <div></div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <h2>No records to show.</h2>
+  {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Login
+{% endblock title %}
+{% block content %}
+<div class="form-signin">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <div class="form-floating">
+            <input type="text" class="form-control" name="username" id="floatingInput">
+            <label for="floatingInput">User Name</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" name="password" id="floatingPassword">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        {% for message in messages %}
+        <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+            <span>{{ message }}</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </form>
+</div>
+{% endblock %}

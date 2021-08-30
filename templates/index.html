@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main class="container">
+    {% if not request.user.is_authenticated %}
+    <div class="p-5 rounded">
+        <h4>Please login to Upload and View posts</h1>
+    </div>
+    {% endif %}
+</main>
+{% endblock %}

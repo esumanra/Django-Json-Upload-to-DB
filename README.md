@@ -20,7 +20,10 @@ Install - `pip install -r requirements.txt`
 
 Create Tables - `python manage.py migrate`
 
-**Start the website** 
+**Start the website**
 
 `python manage.py runserver`
 
+**Login Details**
+
+User (sam), Password (samjam21)

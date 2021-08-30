@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Upload
+{% endblock title %}
+{% block content %}
+<div class="form-signin">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Upload Json File</label>
+      <input class="form-control" type="file" id="formFile" name="jsondocument" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  {% for message in messages %}
+  <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+    <span>{{ message }}</span>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}
